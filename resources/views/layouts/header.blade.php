@@ -6,28 +6,36 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <!--BOOSTRAP LINKS  -->
+
+    {{-- ICON --}}
+    <link rel="shortcut icon" href="{{ asset('img/téléchargement-removebg-preview.png') }}">
+
+    {{-- BOOSTRAP --}}
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-    <!-- JS BOOSTRAP -->
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous">
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"
+        integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE" crossorigin="anonymous">
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"
-        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js"
+        integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ" crossorigin="anonymous">
     </script>
-    <!-- ICON LINKS -->
+    {{-- JQUERY --}}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"
+        integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    {{-- FONTAWESOME --}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
+    {{-- CSS --}}
     <link rel="stylesheet" type="text/css" href="{{ url('/asset/css/css.css') }}">
-    <script type="text/javascript" src="{{ url('/asset/js/js.js') }}"></script>
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top" id="navbar">
         <div class="container-fluid d-flex justify-content-center">
             <div class="p-2">
                 <a class="navbar-brand" href="#">
@@ -38,7 +46,7 @@
                 <ul class="navbar-nav ">
                     <li class="nav-item">
                         <a class="nav-link active" id="cbTitle" href="#">
-                            Cube Magazine
+                            Cube Mag
                         </a>
                     </li>
             </div>
@@ -54,37 +62,13 @@
                             <i class="fa-brands fa-instagram fa-lg" style="color: purple;"></i>
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" data-toggle="collapse"
-                            data-target="#navbarToggleExternalContent">
-                            <i class="fa-solid fa-bars fa-xl"></i>
-                        </a>
-                    </li>
                 </ul>
             </div>
         </div>
     </nav>
-    <div class="collapse" id="navbarToggleExternalContent">
-        <div class="d-flex justify-content-end">
-            <div class="card bg-body-tertiary">
-                <div class="card-body">
-                    <nav class="navbar navbar-expand-lg ">
-                        <ul >
-                            <li class="nav-item">
-                                <a class="nav-link" href="">sd s</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="">sd s</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="">sd s</a>
-                            </li>
-                        </ul>
-
-                    </nav>
-                </div>
-            </div>
-        </div>
+    {{-- div temporaire permettant de clicker pour supprimer le menu option --}}
+    <div id="hiddingDiv" class="position-absolute m-1" onclick="hideMenuGear()"
+        style="width: 98vw;height: 100vh; z-index: 5;display: none; background-color: rgb(62, 23, 136)">
     </div>
 
 
@@ -106,12 +90,14 @@
 
         <ul class="nav col-md-4 justify-content-end">
             <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Home</a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Features</a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Pricing</a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">FAQs</a></li>
             <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">About</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Contact</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">FAQs</a></li>
         </ul>
     </footer>
 </body>
+
+{{-- CSS & JS --}}
+<script type="text/javascript" src="{{ url('/asset/js/js.js') }}"></script>
 
 </html>

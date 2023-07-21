@@ -3,12 +3,37 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i');
 
 
-#cbTitle{
+#cbTitle {
     font-family: 'Playfair Display', serif;
     font-size: 35px;
 }
 
-#imgLastVideo{
+#wlcCard {
+    margin-top: 70px;
+}
+
+#imgLastVideo {
     max-height: 300px;
     object-fit: cover;
+}
+
+/* Styles pour le nav */
+#navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    transition: top 0.8s;
+    z-index: 9999;
+}
+
+
+
+/* Styles pour le contenu de la page */
+.content {
+    height: 2000px;
+    padding-top: 100px;
+    /* Pour éviter que le contenu soit masqué par le nav */
 }
